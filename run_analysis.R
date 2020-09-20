@@ -64,7 +64,7 @@ names(subData)<-gsub("mean","Mean",names(subData))
 
 #creating the second independent tidy data set with the average of each variable for each activity and each subject.
 secondData<- subData %>% group_by(subject,activity) %>% summarise_all(list(mean = mean))
-write.table(secondData,"secondTidyData.txt")
+write.table(secondData,"secondTidyData.txt", row.names = FALSE)
 
 
 
